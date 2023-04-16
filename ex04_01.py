@@ -1,18 +1,25 @@
-def numMax(num1,num2,num3):
-    fNum1 = float(num1)
-    fNum2 = float(num2)
-    fNum3 = float(num3)
-    
-    max3 = max(fNum1,fNum2,fNum3)
-    return max3
+def computeGrade(score):
+    try:
+        score = float(score)
+
+        if score > 1.0:
+            return 'Bad score'
+        elif score >= 0.9 and score <= 1.0:
+            return 'A'
+        elif score >= 0.8 and score < 0.9:
+            return 'B'
+        elif score >= 0.7 and score < 0.8:
+            return 'C'
+        elif score >= 0.6 and score < 0.7:
+            return 'D'
+        elif score > 0.0 and score < 0.6:
+            return 'F'
+        elif score < 0.0:
+            return 'Bad Score'
+    except:
+        return 'Bad score'
 
 
-num1 = input('Please enter first number: ')
-num2 = input('Please enter second number: ')
-num3 = input('Please enter third number: ')
-
-try:
-    max = numMax(num1,num2,num3)
-    print(max)
-except:
-    print('Please enter a numeric value')
+score = input("Enter Score Between 0.0 and 1.0: ")
+score = computeGrade(score)
+print(score)
